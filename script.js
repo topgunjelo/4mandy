@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Script loaded – heart should be clickable');
+
   const front = document.getElementById('cardFront');
   const inside = document.getElementById('cardInside');
   const heartOpener = document.getElementById('openHeartBtn');
@@ -12,9 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Open the secret card when heart is clicked
   if (heartOpener) {
     heartOpener.addEventListener('click', function() {
+      console.log('Heart clicked – opening card');
       front.classList.add('hidden');
       inside.classList.remove('hidden');
     });
+  } else {
+    console.error('Heart element not found!');
   }
 
   // Helper to show response and hide question/buttons
@@ -33,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Yes button
   if (yesBtn) {
     yesBtn.addEventListener('click', function() {
+      console.log('Yes clicked');
       showResponse(true);
     });
   }
@@ -40,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // No button
   if (noBtn) {
     noBtn.addEventListener('click', function() {
+      console.log('No clicked');
       showResponse(false);
     });
   }
