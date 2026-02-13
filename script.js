@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Script loaded – heart should be clickable');
 
   const front = document.getElementById('cardFront');
   const inside = document.getElementById('cardInside');
@@ -11,44 +10,41 @@ document.addEventListener('DOMContentLoaded', function() {
   const actionButtons = document.getElementById('actionButtons');
   const questionEl = document.querySelector('.question');
 
-  // Open the secret card when heart is clicked
-  if (heartOpener) {
-    heartOpener.addEventListener('click', function() {
-      console.log('Heart clicked – opening card');
-      front.classList.add('hidden');
-      inside.classList.remove('hidden');
+  const bgMusic = document.getElementById('bgMusic');
+
+  // Open card + play music
+  heartOpener.addEventListener('click', function() {
+    front.classList.add('hidden');
+    inside.classList.remove('hidden');
+
+    bgMusic.play().catch(error => {
+      console.log("Autoplay blocked:", error);
     });
-  } else {
-    console.error('Heart element not found!');
-  }
+  });
 
-  // Helper to show response and hide question/buttons
   function showResponse(isPositive = true) {
-    if (questionEl) questionEl.style.display = 'none';
-    if (actionButtons) actionButtons.style.display = 'none';
-
+    questionEl.style.display = 'none';
+    actionButtons.style.display = 'none';
     responseMsg.classList.remove('hidden');
+
     if (isPositive) {
-      responseMsg.innerHTML = `💖 yes! 💖<span class="sub-msg">I love you so much, mahal! Thank you for being my valentine!.</span>`;
+      responseMsg.innerHTML =
+        `💖 yes! 💖<span class="sub-msg">I love you so much, mahal! Thank you for being my valentine!</span>`;
     } else {
-      responseMsg.innerHTML = `💔 it's okay 💔<span class="sub-msg">I'll still be here, no pressure.</span>`;
+      responseMsg.innerHTML =
+        `💔 it's okay 💔<span class="sub-msg">I'll still be here, no pressure.</span>`;
+
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
     }
   }
 
-  // Yes button
-  if (yesBtn) {
-    yesBtn.addEventListener('click', function() {
-      console.log('Yes clicked');
-      showResponse(true);
-    });
-  }
+  yesBtn.addEventListener('click', function() {
+    showResponse(true);
+  });
 
-  // No button
-  if (noBtn) {
-    noBtn.addEventListener('click', function() {
-      console.log('No clicked');
-      showResponse(false);
-    });
-  }
+  noBtn.addEventListener('click', function() {
+    showResponse(false);
+  });
+
 });
-
