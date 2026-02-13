@@ -22,8 +22,6 @@ body {
 }
 
 .card {
-  background: #ffffffdd;
-  backdrop-filter: blur(4px);
   background: rgba(255, 255, 255, 0.95);
   border-radius: 40px;
   box-shadow: 0 25px 40px -10px rgba(180, 60, 80, 0.3);
@@ -133,6 +131,7 @@ body {
 
 .heart-btn i {
   font-size: 1.6rem;
+  /* No pointer-events rule needed – button handles clicks */
 }
 
 .heart-btn:hover {
@@ -175,15 +174,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* prevent small heart inside button from blocking clicks */
-.fa-heart {
-  pointer-events: none;
-}
-
-/* but the big heart on the front MUST be clickable */
-#openHeartBtn {
-  pointer-events: auto;
-}
+/* No global rule disabling clicks on icons */
 
 @media (max-width: 450px) {
   .card {
