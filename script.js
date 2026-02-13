@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     responseMsg.classList.remove('hidden');
     if (isPositive) {
-      responseMsg.innerHTML = `💖 yes! 💖<span class="sub-msg">Mandy, you just made my day.</span>`;
+      responseMsg.innerHTML = `💖 yes! 💖<span class="sub-msg">I love you so much, mahal! Thank you for being my valentine!.</span>`;
     } else {
       responseMsg.innerHTML = `💔 it's okay 💔<span class="sub-msg">I'll still be here, no pressure.</span>`;
     }
@@ -51,3 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
