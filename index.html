@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for Mandy · secret card</title>
+  <!-- external CSS & fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="valentineCard">
+      <!-- FRONT (secret / closed) -->
+      <div class="card-front" id="cardFront">
+        <i class="fas fa-heart heart-icon" id="openHeartBtn"></i>
+        <p class="secret-text">for Mandy</p>
+        <p class="click-hint">❤️ click the heart ❤️</p>
+      </div>
+
+      <!-- INSIDE (opened – hidden initially) -->
+      <div class="card-inside hidden" id="cardInside">
+        <h2 class="question">Mandy, will you be my Valentine?</h2>
+        <div class="buttons" id="actionButtons">
+          <button class="heart-btn" id="yesBtn"><i class="fas fa-heart"></i> Yes</button>
+          <button class="no-btn" id="noBtn">No</button>
+        </div>
+        <div class="response-message hidden" id="responseMsg"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
