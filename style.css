@@ -175,8 +175,14 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* prevent small heart inside button from blocking clicks */
 .fa-heart {
   pointer-events: none;
+}
+
+/* but the big heart on the front MUST be clickable */
+#openHeartBtn {
+  pointer-events: auto;
 }
 
 @media (max-width: 450px) {
