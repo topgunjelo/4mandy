@@ -9,16 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const responseMsg = document.getElementById('responseMsg');
   const actionButtons = document.getElementById('actionButtons');
   const questionEl = document.querySelector('.question');
-
   const bgMusic = document.getElementById('bgMusic');
 
-  // Open card + play music
   heartOpener.addEventListener('click', function() {
     front.classList.add('hidden');
     inside.classList.remove('hidden');
 
-    bgMusic.play().catch(error => {
-      console.log("Autoplay blocked:", error);
+    bgMusic.volume = 0.6;
+
+    bgMusic.play().then(() => {
+      console.log("Music started");
+    }).catch(err => {
+      console.log("Playback failed:", err);
     });
   });
 
