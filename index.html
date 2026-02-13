@@ -12,16 +12,14 @@
 
 <body>
   <div class="container">
-    <div class="card" id="valentineCard">
+    <div class="card">
 
-      <!-- FRONT -->
       <div class="card-front" id="cardFront">
         <i class="fas fa-heart heart-icon" id="openHeartBtn"></i>
         <p class="secret-text">for Mandy</p>
         <p class="click-hint">❤️ click the heart ❤️</p>
       </div>
 
-      <!-- INSIDE -->
       <div class="card-inside hidden" id="cardInside">
         <h2 class="question">Honey, will you be my Valentine?</h2>
 
@@ -29,7 +27,6 @@
           <button class="heart-btn" id="yesBtn">
             <i class="fas fa-heart"></i> Yes
           </button>
-
           <button class="no-btn" id="noBtn">No</button>
         </div>
 
@@ -40,7 +37,7 @@
   </div>
 
   <!-- AUDIO -->
-  <audio id="bgMusic" loop>
+  <audio id="bgMusic" preload="auto" loop>
     <source src="iwill.mp3" type="audio/mpeg">
   </audio>
 
